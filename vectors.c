@@ -135,7 +135,6 @@ void insert(Vector *vector, int index, TYPE value){
 	for(int i = vector->size; i > index;--i) vector->ptr[i] = vector->ptr[i - 1];
 	vector->ptr[index + 1] = value;
 	++vector->size;		
-
 }
 
 
