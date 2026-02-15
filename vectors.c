@@ -23,7 +23,7 @@ void pop_front(Vector *vector);
 
 void insert(Vector *vector, int index, TYPE value);
 void finde(Vector *vector,TYPE value);
-
+void myremove(Vector *vector, int index);
 
 
 int main(){
@@ -47,6 +47,7 @@ int main(){
 	printf("%zu\n" , array.size);
 	insert(&array,2,99);	
 	insert(&array,8,99);
+	myremove(&array,3);
 	finde(&array,99);
 	finde(&array,101);
 
@@ -152,6 +153,12 @@ void finde(Vector *vector,TYPE value){
 }
 
 
+void myremove(Vector *vector, int index){
+	
+	for(int i = index; i < (vector->size - 1);++i) vector->ptr[i] = vector->ptr[i + 1];
+	--vector->size;		
+
+}
 
 
 
